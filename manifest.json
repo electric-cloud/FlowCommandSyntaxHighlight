@@ -1,0 +1,18 @@
+{
+  "manifest_version": 2,
+  "name": "ElectricFlow Syntax Highlighting",
+  "description": "This extension adds syntax highlighting to the Step command page in the ElectricFlow UI.",
+  "version": "0.1.6",
+  "content_scripts": [
+    {
+ "matches": ["https://*/commander/link/*editStep*"],
+ "css":["codemirror.css","jquery-ui-1.10.2.custom.min.css"],
+ "js": ["jquery.js","myscript.js","codemirror.js", "wait.js","perl.js","shell.js",
+     "javascript.js","python.js","ruby.js","tcl.js","jquery-ui-1.10.2.custom.min.js",
+     "groovy.js"]
+    }
+  ],
+    "icons": { "16": "icon16.png",
+        "48": "icon48.png",
+        "128": "icon128.png" }
+}
