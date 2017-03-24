@@ -2,7 +2,7 @@
   "manifest_version": 2,
   "name": "ElectricFlow Syntax Highlighting",
   "description": "This extension adds syntax highlighting to the Step command page in the ElectricFlow UI.",
-  "version": "0.1.8",
+  "version": "1.0.0",
   "content_scripts": [
     {
       "matches": [
