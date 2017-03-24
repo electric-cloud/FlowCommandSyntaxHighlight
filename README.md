@@ -21,11 +21,11 @@ This extension is based on [CodeMirror] version 5.25.0.
 
 This is the main point of entry. It overload the default textarea with the codemirror editor.
 
-### [manifest.json](blob/master/manifest.json)
+### [manifest.json](manifest.json)
 
 The list of files to pack for the chrome extension. It seems the order is important.
 
-### [codemirror](tree/master/codemirror)
+### [codemirror](codemirror)
 A trimmed down version of the [CodeMirror code](https://github.com/codemirror/CodeMirror). The idea is to get a smaller package for the extension. Feel to add modules as
 required and add them to the [manifest.json](blob/master/manifest.json)
 
