@@ -6,25 +6,25 @@ var timer;
 
 jQuery("textarea[name='command']").ready(function($) {
 
-waitUntilExists("_12_1",function(){
+  waitUntilExists("_12_1",function(){
 
-$('<input id="codeMirrorCheckbox" type="checkbox" name="myCheckbox"/>' +
-    '<span>Toggle syntax highlighting</span>').insertAfter("textarea[name='command']");
+    $('<input id="codeMirrorCheckbox" type="checkbox" name="myCheckbox"/>' +
+      '<span>Toggle syntax highlighting</span>').insertAfter("textarea[name='command']");
 
     var checkbox = document.getElementById("codeMirrorCheckbox");
     checkbox.addEventListener("click", function(e) {
       toggleCodeMirror(e);
     }, false);
 
-   var select = "<span>Language:</span><select id='codeMirrorLang' >" +
+    var select = "<span>Language:</span><select id='codeMirrorLang' >" +
         "<option value='perl'>Perl</option>" +
         "<option value='groovy'>Groovy</option>" +
         "<option value='shell'>Shell</option>" +
         "<option value='javascript'>JavaScript</option>" +
-       "<option value='python'>Python</option>" +
-       "<option value='ruby'>Ruby</option>" +
-       "<option value='tcl'>TCL</option>" +
-    "</select>";
+        "<option value='python'>Python</option>" +
+        "<option value='ruby'>Ruby</option>" +
+        "<option value='tcl'>TCL</option>" +
+      "</select>";
 
     $("#codeMirrorCheckbox").before(select);
 
@@ -49,8 +49,7 @@ $('<input id="codeMirrorCheckbox" type="checkbox" name="myCheckbox"/>' +
         }
 
     }
-})
-
+  })
 });
 
 // Function: changeMode(event)
@@ -75,8 +74,7 @@ function toggleCodeMirror (event){
         // Create the global code mirror objects
         createCodeMirror(widget,language);
 
-    } else{
-
+    } else {
         // Turn syntax highlighting off
         editor.off("change");
         editor.toTextArea();
@@ -90,29 +88,27 @@ function saveToTextArea(){
     if(typeof editor !== "undefined" && editor !== null){
         editor.save();
     }
-
 }
 
 // Function: createCodeMirror(widget,language)
 // Creates Code Mirror object with given language to given textarea
 function createCodeMirror(widget,language){
 
-    cm = CodeMirror;
-    editor = cm.fromTextArea(widget, {
-        mode: language,
-        lineNumbers: true,
-        matchBrackets: true,
-        indentUnit: 4
+  cm = CodeMirror;
+  editor = cm.fromTextArea(widget, {
+      mode: language,
+      lineNumbers: true,
+      matchBrackets: true,
+      indentUnit: 4
+  });
 
-    });
+  editor.on("change", function(){
+      saveToTextArea();
+  });
 
-    editor.on("change", function(){
-        saveToTextArea();
-    });
-
-    $('.CodeMirror').resizable({
-        resize: function() {
-            editor.setSize($(this).width(), $(this).height());
-        }
-    });
+  $('.CodeMirror').resizable({
+      resize: function() {
+          editor.setSize($(this).width(), $(this).height());
+      }
+  });
 }
