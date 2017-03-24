@@ -13,10 +13,11 @@ This extension is based on [CodeMirror] version 5.25.0.
 3. Be sure the **Developer mode** checkbox is checked
 4. Click **Load unpacked extension..**
 5. Navigate to your extension directory
+6. Select it. It should load and display any error
 
 ## Major files and directories
 
-### [myscript.js](blob/master/myscript.js)
+### [myscript.js](myscript.js)
 
 This is the main point of entry. It overload the default textarea with the codemirror editor.
 
