@@ -19,6 +19,8 @@ This extension is based on [CodeMirror](https://codemirror.net) version 5.25.0.
 
 1. create a zip file with [createExtensionPackage.sh](createExtensionPackage.sh)
 2. upload to the **[Chrome Developer Dashboard](https://chrome.google.com/webstore/developer/dashboard)**
+3. You can simply edit the current version, upload the new ZIP package you created above, and then publish
+4. To create a new one:
  * Click on **Add new item**
  * Navigate and to your zip file.
  * it seems you have to fill all the information again
